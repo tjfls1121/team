@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>공통 문서양식 관리</title>
+<!-- jquery를 사용하기 위한 작성 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- 합쳐지고 최소화된 CSS -->
+<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css}">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet" th:href="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.theme.min.css}">
+<!-- 합쳐치고 최소화된 자바스크립트 -->
+<script th:src="@{https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js}"></script>
+</head> 
+<body>
+<div class="container">
+<h1>공통문서양식 관리</h1>
+	<table>
+		<tr th:each="list : ${list}">
+			<td>
+				<a th:href="@{/boardDetail(documentFormCategoryCode = ${list.documentFormCategoryCode})}">
+					<th:block th:text="${list.documentFormCategoryName}"></th:block>
+				</a>
+			</td>
+		</tr>
+	</table>
+</div>
+</body>
+</html>
